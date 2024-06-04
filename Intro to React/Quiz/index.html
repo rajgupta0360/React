@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Features of React</title>
+    <!-- React link -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <!-- React DOM link -->
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <!-- Babel -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="main">
+
+    </div>
+
+    <script type="text/babel">
+        const newElement = <>
+                            <h1>About React</h1>
+                            <p>
+                                <li>JSX(JavaScript Syntax Extension)</li>
+                                <li>Virtual DOM</li>
+                                <li>React is Composable</li>
+                                <li>One-way Data Binding</li>
+                            </p>
+                           </>
+        
+        ReactDOM.createRoot(document.getElementById('main')).render(newElement);
+    </script>
+</body>
+</html>
