@@ -1,0 +1,6 @@
+Q - Create an array, array of objects, each object have name, age and marks. Your task is to display the data in tabular format like: 
+                         Student name  age  marks
+                            rohan      20    90
+                            rinki      19    91
+                            pinki      21    85
+                            Amit       18    54

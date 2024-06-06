@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <title>Quiz2</title>
+
+  </head>
+
+  <body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+      const App = () => {
+        const arr = [{
+            name: "Rohit",
+            age: 26,
+            marks: 450
+        },
+        {
+            name: "Raj",
+            age: 22,
+            marks: 499
+        },
+        {
+            name: "Ratna",
+            age: 24,
+            marks: 300
+        },
+        {
+            name: "Sristy",
+            age: 21,
+            marks: 480
+        },
+        {
+            name: "Urvasi",
+            age: 23,
+            marks: 397
+        }
+        ];
+
+        return(
+            <>
+            <table border="1">
+                <tr>
+                    <th>Student Name</th>
+                    <th>Age</th>
+                    <th>Marks</th>
+                </tr>
+                {arr.map((val)=> <>
+                    <tr>
+                        <td>{val.name}</td>
+                        <td>{val.age}</td>
+                        <td>{val.marks}</td>
+                    </tr>
+                    </>)}
+            </table>
+            </>
+        )
+        
+      };
+
+      const rootElement = ReactDOM.createRoot(document.getElementById("root"));
+      rootElement.render(<App />);
+    </script>
+
+  </body>
+</html>
+

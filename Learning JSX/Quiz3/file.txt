@@ -1,0 +1,1 @@
+Q - Create a table with Car Details, details must contain image of car.
