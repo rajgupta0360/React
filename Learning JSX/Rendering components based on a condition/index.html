@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rendering Components based on a Condition</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="root">
+
+    </div>
+
+    <script type="text/babel">
+        function Student(){
+            let students = [
+                {
+                    name: "Alexa",
+                    age: 10,
+                    marks: 35
+                },
+                {
+                    name: "Siri",
+                    age: 12,
+                    marks: 40
+                },
+                {
+                    name: "Google",
+                    age: 13,
+                    marks: 41
+                }
+            ];
+
+            return(
+                <>
+                    <h1>students Details</h1>
+                    <table border="1">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Age</th>
+                                <th>Marks</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            {students.map((student, index)=>(
+                                <tr key={index}>
+                                    <td>{student.name}</td>
+                                    <td>{student.age}</td>
+                                    <td>{student.marks}</td>
+                                </tr>
+                            ))}
+                    </tbody>
+                    </table>
+                </>
+            )
+        };
+
+        function CarsPage(){
+            const cars = [
+                {
+                    name: "BMW",
+                    color: "White",
+                    mileage: 10,
+                    image: "https://images.pexels.com/photos/100650/pexels-photo-100650.jpeg?auto=compress&cs=tinysrgb&w=600",
+                },
+                {
+                    name: "Roll-Royce Droptail",
+                    color: "Black",
+                    mileage: 15,
+                    image: "https://images.pexels.com/photos/12088111/pexels-photo-12088111.jpeg?auto=compress&cs=tinysrgb&w=600",
+                },
+                {
+                    name: "Audi",
+                    color: "Blue",
+                    mileage: 12,
+                    image: "https://images.pexels.com/photos/244212/pexels-photo-244212.jpeg?auto=compress&cs=tinysrgb&w=600",
+                }
+            ];
+
+            return (
+                <>
+                <h1>Cars Details</h1>
+                <table border="1">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Color</th>
+                            <th>Image</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {cars.map((car, index)=>(
+                            <tr key={index}>
+                                <td>{car.name}</td>
+                                <td>{car.color}</td>
+                                <td><img src={car.image} alt="car-img" height="100px"></img></td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
+                </>
+            )
+        }
+
+        function App(){
+            let showCars = false;
+            if(showCars){
+                return <CarsPage/>
+            }
+            return (
+                <>
+                <Student/>
+                </>
+            )
+        }
+
+        const rootElement = ReactDOM.createRoot(document.getElementById('root'));
+        rootElement.render(<App/>);
+    </script>
+</body>
+</html>
